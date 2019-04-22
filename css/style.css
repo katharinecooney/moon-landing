@@ -1,0 +1,237 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 24px;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh; 
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Bungee Shade', sans-serif;
+  font-weight: 100;
+  font-size: 4em;
+  margin: 25px 0 35px 0;
+  padding: 0 25px;
+}
+
+p {
+  text-align: center;
+  margin: 0 0 30px 0;
+  padding: 0 25px;
+}
+
+#game-container {
+  height: 80vh;
+  width: 100vw;
+}
+
+/******************** SCREEN STYLES **********************/
+h1#game-title{
+  animation: bouncingTitle 1.5s infinite alternate;
+}
+
+#splash-container,
+#game-over-container,
+#win-container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  color: rgb(240, 188, 253);
+}
+
+#win-container {
+  background: linear-gradient( rgba(6, 1, 11, 0.7), rgba(10, 5, 15, 0.7) ), url('https://blenderartists.org/uploads/default/original/4X/4/2/f/42f6c9b37b58198f8d05207648e1938619473bc6.jpg') center / cover no-repeat;
+}
+
+#splash-container,
+#game-over-container {
+  background: #c31432;  
+  background: -webkit-linear-gradient(to right, #240b36, #c31432);  
+  background: linear-gradient(to right, #240b36, #c31432); 
+  color: white;
+}
+
+#splash-content,
+#game-over-content,
+#win-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+/******************** BUTTONS **********************/
+#levelButtonContainer,
+.replayLevelButtonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+button.easy-button,
+button.hard-button,
+button.impossible-button,
+button.replay-easy,
+button.replay-hard,
+button.replay-impossible {
+  box-shadow: -3px 5px 10px rgba(235, 243, 239, 0.404);
+  width: 210px;
+  margin: 10px 15px;
+  padding: 15px 0;
+  font-size: 1.5em;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(42, 1, 46, 0.664);
+  color: white;
+} 
+
+#win-content button {
+  background-color: rgb(77, 38, 87);
+  animation: yourAnimation 2s infinite alternate;
+}
+/************ TIMER AND COUNTER **************/
+
+#game-info {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: rgb(6, 1, 11);
+}
+
+#star-counter,
+#timer {
+  flex: 1;
+  border: 1px solid black;
+  font-size: 2em;
+  color: white;
+}
+
+#star-counter {
+  text-align: left;
+  padding-top: 5px;
+}
+
+#star-counter-image {
+  width: 50px;
+  height: 50px;
+  padding: 5px 15px 5px 20px; 
+}
+
+#timer-image {
+  width: 55px;
+  height: 55px;
+  padding: 5px 20px 5px 5px;
+}
+
+#timer {
+  text-align: right;
+  padding-top: 5px;
+}
+
+/******************** RULES **********************/
+
+#rules {
+  height: 15vh;
+  border: 3px solid black;
+  background-color: rgba(6, 1, 11, 0.048);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -6px;
+}
+
+#rules div.rules-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#rules-image {
+  width: 80px;
+  padding: 0 20px 30px 20px;
+}
+
+#rules-text {
+  margin: 0;
+  padding: 0 20px 20px 0;
+}
+
+/******************** MEDIA QUERIES **********************/
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  p {
+    font-size: 0.75em;
+  }
+
+  button.easy-button,
+  button.hard-button,
+  button.impossible-button,
+  button.replay-easy,
+  button.replay-hard,
+  button.replay-impossible {
+    font-size: 1em;
+    width: 180px;
+  }
+
+  #rules-image {
+    width: 60px;
+  }
+
+  #levelButtonContainer,
+  .replayLevelButtonContainer {
+    width: 50%;
+  }
+}
+
+@media (max-width: 730px) {
+  button.easy-button,
+  button.hard-button,
+  button.impossible-button,
+  button.replay-easy,
+  button.replay-hard,
+  button.replay-impossible {
+    font-size: 1.2em;
+    width: 170px;
+  }
+}
+
+/******************** KEYFRAMES **********************/
+
+@keyframes bouncingTitle {
+  from {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  to {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+}
+
+@keyframes yourAnimation {
+  from {
+      box-shadow: -3px 5px 10px rgba(88, 78, 78, 0.555);
+      }
+  to {
+      box-shadow: -3px 5px 10px rgba(233, 235, 168, 0.315);
+      }
+}
